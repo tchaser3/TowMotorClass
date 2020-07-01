@@ -1008,14 +1008,14 @@ namespace TowMotorDLL
 
             return blnFatalError;
         }
-        public bool InsertTowMotorMain(string strTowMotorNumber, int intTowMotorYear, string strTowMotorMake, string strTowMotorModel, string strTowMotorSerialNo, decimal decTowMotorHours, int intWarehouseID, DateTime datOilChangeDate, bool blnTowMotorActive)
+        public bool InsertTowMotorMain(string strTowMotorNumber, int intTowMotorYear, string strTowMotorMake, string strTowMotorModel, string strTowMotorSerialNo, decimal decTowMotorHours, int intWarehouseID, DateTime datOilChangeDate, bool blnTowMotorActive, int intTowMotorWeight, int intTowMotorCapacity)
         {
             bool blnFatalError = false;
 
             try
             {
                 aInsertTowMotorMainTableAdapter = new InsertTowMotorMainEntryTableAdapters.QueriesTableAdapter();
-                aInsertTowMotorMainTableAdapter.InsertTowMotorMain(strTowMotorNumber, intTowMotorYear, strTowMotorMake, strTowMotorModel, strTowMotorSerialNo, decTowMotorHours, intWarehouseID, datOilChangeDate, blnTowMotorActive);
+                aInsertTowMotorMainTableAdapter.InsertTowMotorMain(strTowMotorNumber, intTowMotorYear, strTowMotorMake, strTowMotorModel, strTowMotorSerialNo, decTowMotorHours, intWarehouseID, datOilChangeDate, blnTowMotorActive, intTowMotorWeight, intTowMotorCapacity);
             }
             catch (Exception Ex)
             {

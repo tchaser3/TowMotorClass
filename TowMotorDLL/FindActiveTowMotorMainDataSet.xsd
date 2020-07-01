@@ -32,6 +32,8 @@
               <Mapping SourceColumn="WarehouseID" DataSetColumn="WarehouseID" />
               <Mapping SourceColumn="OilChangeDate" DataSetColumn="OilChangeDate" />
               <Mapping SourceColumn="TowMotorActive" DataSetColumn="TowMotorActive" />
+              <Mapping SourceColumn="TowMotorWeight" DataSetColumn="TowMotorWeight" />
+              <Mapping SourceColumn="TowMotorCapacity" DataSetColumn="TowMotorCapacity" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -87,6 +89,8 @@
               <xs:element name="WarehouseID" msprop:Generator_ColumnVarNameInTable="columnWarehouseID" msprop:Generator_ColumnPropNameInRow="WarehouseID" msprop:Generator_ColumnPropNameInTable="WarehouseIDColumn" msprop:Generator_UserColumnName="WarehouseID" type="xs:int" />
               <xs:element name="OilChangeDate" msprop:Generator_ColumnVarNameInTable="columnOilChangeDate" msprop:Generator_ColumnPropNameInRow="OilChangeDate" msprop:Generator_ColumnPropNameInTable="OilChangeDateColumn" msprop:Generator_UserColumnName="OilChangeDate" type="xs:dateTime" />
               <xs:element name="TowMotorActive" msprop:Generator_ColumnVarNameInTable="columnTowMotorActive" msprop:Generator_ColumnPropNameInRow="TowMotorActive" msprop:Generator_ColumnPropNameInTable="TowMotorActiveColumn" msprop:Generator_UserColumnName="TowMotorActive" type="xs:boolean" />
+              <xs:element name="TowMotorWeight" msprop:Generator_ColumnVarNameInTable="columnTowMotorWeight" msprop:Generator_ColumnPropNameInRow="TowMotorWeight" msprop:Generator_ColumnPropNameInTable="TowMotorWeightColumn" msprop:Generator_UserColumnName="TowMotorWeight" type="xs:int" />
+              <xs:element name="TowMotorCapacity" msprop:Generator_ColumnVarNameInTable="columnTowMotorCapacity" msprop:Generator_ColumnPropNameInRow="TowMotorCapacity" msprop:Generator_ColumnPropNameInTable="TowMotorCapacityColumn" msprop:Generator_UserColumnName="TowMotorCapacity" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

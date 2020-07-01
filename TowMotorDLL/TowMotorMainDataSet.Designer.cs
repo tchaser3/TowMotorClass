@@ -299,6 +299,10 @@ namespace TowMotorDLL {
             
             private global::System.Data.DataColumn columnTowMotorActive;
             
+            private global::System.Data.DataColumn columnTowMotorWeight;
+            
+            private global::System.Data.DataColumn columnTowMotorCapacity;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public towmotormainDataTable() {
@@ -414,6 +418,22 @@ namespace TowMotorDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TowMotorWeightColumn {
+                get {
+                    return this.columnTowMotorWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TowMotorCapacityColumn {
+                get {
+                    return this.columnTowMotorCapacity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +469,7 @@ namespace TowMotorDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public towmotormainRow AddtowmotormainRow(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive) {
+            public towmotormainRow AddtowmotormainRow(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive, int TowMotorWeight, int TowMotorCapacity) {
                 towmotormainRow rowtowmotormainRow = ((towmotormainRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -461,7 +481,9 @@ namespace TowMotorDLL {
                         TowMotorHours,
                         WarehouseID,
                         OilChangeDate,
-                        TowMotorActive};
+                        TowMotorActive,
+                        TowMotorWeight,
+                        TowMotorCapacity};
                 rowtowmotormainRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtowmotormainRow);
                 return rowtowmotormainRow;
@@ -501,6 +523,8 @@ namespace TowMotorDLL {
                 this.columnWarehouseID = base.Columns["WarehouseID"];
                 this.columnOilChangeDate = base.Columns["OilChangeDate"];
                 this.columnTowMotorActive = base.Columns["TowMotorActive"];
+                this.columnTowMotorWeight = base.Columns["TowMotorWeight"];
+                this.columnTowMotorCapacity = base.Columns["TowMotorCapacity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +550,10 @@ namespace TowMotorDLL {
                 base.Columns.Add(this.columnOilChangeDate);
                 this.columnTowMotorActive = new global::System.Data.DataColumn("TowMotorActive", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTowMotorActive);
+                this.columnTowMotorWeight = new global::System.Data.DataColumn("TowMotorWeight", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTowMotorWeight);
+                this.columnTowMotorCapacity = new global::System.Data.DataColumn("TowMotorCapacity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTowMotorCapacity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTowMotorID}, true));
                 this.columnTowMotorID.AutoIncrement = true;
@@ -547,6 +575,8 @@ namespace TowMotorDLL {
                 this.columnWarehouseID.AllowDBNull = false;
                 this.columnOilChangeDate.AllowDBNull = false;
                 this.columnTowMotorActive.AllowDBNull = false;
+                this.columnTowMotorWeight.AllowDBNull = false;
+                this.columnTowMotorCapacity.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -796,6 +826,28 @@ namespace TowMotorDLL {
                     this[this.tabletowmotormain.TowMotorActiveColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TowMotorWeight {
+                get {
+                    return ((int)(this[this.tabletowmotormain.TowMotorWeightColumn]));
+                }
+                set {
+                    this[this.tabletowmotormain.TowMotorWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TowMotorCapacity {
+                get {
+                    return ((int)(this[this.tabletowmotormain.TowMotorCapacityColumn]));
+                }
+                set {
+                    this[this.tabletowmotormain.TowMotorCapacityColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -967,10 +1019,12 @@ namespace TowMotorDLL.TowMotorMainDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("WarehouseID", "WarehouseID");
             tableMapping.ColumnMappings.Add("OilChangeDate", "OilChangeDate");
             tableMapping.ColumnMappings.Add("TowMotorActive", "TowMotorActive");
+            tableMapping.ColumnMappings.Add("TowMotorWeight", "TowMotorWeight");
+            tableMapping.ColumnMappings.Add("TowMotorCapacity", "TowMotorCapacity");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[towmotormain] WHERE (([TowMotorID] = @Original_TowMotorID) AND ([TowMotorYear] = @Original_TowMotorYear) AND ([TowMotorHours] = @Original_TowMotorHours) AND ([WarehouseID] = @Original_WarehouseID) AND ([OilChangeDate] = @Original_OilChangeDate) AND ([TowMotorActive] = @Original_TowMotorActive))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[towmotormain] WHERE (([TowMotorID] = @Original_TowMotorID) AND ([TowMotorYear] = @Original_TowMotorYear) AND ([TowMotorHours] = @Original_TowMotorHours) AND ([WarehouseID] = @Original_WarehouseID) AND ([OilChangeDate] = @Original_OilChangeDate) AND ([TowMotorActive] = @Original_TowMotorActive) AND ([TowMotorWeight] = @Original_TowMotorWeight) AND ([TowMotorCapacity] = @Original_TowMotorCapacity))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -978,10 +1032,12 @@ namespace TowMotorDLL.TowMotorMainDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WarehouseID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WarehouseID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OilChangeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OilChangeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorCapacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[towmotormain] ([TowMotorNumber], [TowMotorYear], [TowMotorMake], [TowMotorModel], [TowMotorSerialNo], [TowMotorHours], [WarehouseID], [OilChangeDate], [TowMotorActive]) VALUES (@TowMotorNumber, @TowMotorYear, @TowMotorMake, @TowMotorModel, @TowMotorSerialNo, @TowMotorHours, @WarehouseID, @OilChangeDate, @TowMotorActive);
-SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive FROM towmotormain WHERE (TowMotorID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[towmotormain] ([TowMotorNumber], [TowMotorYear], [TowMotorMake], [TowMotorModel], [TowMotorSerialNo], [TowMotorHours], [WarehouseID], [OilChangeDate], [TowMotorActive], [TowMotorWeight], [TowMotorCapacity]) VALUES (@TowMotorNumber, @TowMotorYear, @TowMotorMake, @TowMotorModel, @TowMotorSerialNo, @TowMotorHours, @WarehouseID, @OilChangeDate, @TowMotorActive, @TowMotorWeight, @TowMotorCapacity);
+SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive, TowMotorWeight, TowMotorCapacity FROM towmotormain WHERE (TowMotorID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -992,10 +1048,12 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WarehouseID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WarehouseID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OilChangeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OilChangeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorCapacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[towmotormain] SET [TowMotorNumber] = @TowMotorNumber, [TowMotorYear] = @TowMotorYear, [TowMotorMake] = @TowMotorMake, [TowMotorModel] = @TowMotorModel, [TowMotorSerialNo] = @TowMotorSerialNo, [TowMotorHours] = @TowMotorHours, [WarehouseID] = @WarehouseID, [OilChangeDate] = @OilChangeDate, [TowMotorActive] = @TowMotorActive WHERE (([TowMotorID] = @Original_TowMotorID) AND ([TowMotorYear] = @Original_TowMotorYear) AND ([TowMotorHours] = @Original_TowMotorHours) AND ([WarehouseID] = @Original_WarehouseID) AND ([OilChangeDate] = @Original_OilChangeDate) AND ([TowMotorActive] = @Original_TowMotorActive));
-SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive FROM towmotormain WHERE (TowMotorID = @TowMotorID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[towmotormain] SET [TowMotorNumber] = @TowMotorNumber, [TowMotorYear] = @TowMotorYear, [TowMotorMake] = @TowMotorMake, [TowMotorModel] = @TowMotorModel, [TowMotorSerialNo] = @TowMotorSerialNo, [TowMotorHours] = @TowMotorHours, [WarehouseID] = @WarehouseID, [OilChangeDate] = @OilChangeDate, [TowMotorActive] = @TowMotorActive, [TowMotorWeight] = @TowMotorWeight, [TowMotorCapacity] = @TowMotorCapacity WHERE (([TowMotorID] = @Original_TowMotorID) AND ([TowMotorYear] = @Original_TowMotorYear) AND ([TowMotorHours] = @Original_TowMotorHours) AND ([WarehouseID] = @Original_WarehouseID) AND ([OilChangeDate] = @Original_OilChangeDate) AND ([TowMotorActive] = @Original_TowMotorActive) AND ([TowMotorWeight] = @Original_TowMotorWeight) AND ([TowMotorCapacity] = @Original_TowMotorCapacity));
+SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive, TowMotorWeight, TowMotorCapacity FROM towmotormain WHERE (TowMotorID = @TowMotorID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1006,12 +1064,16 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WarehouseID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WarehouseID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OilChangeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OilChangeDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorWeight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorCapacity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorHours", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "TowMotorHours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_WarehouseID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WarehouseID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OilChangeDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OilChangeDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorActive", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorActive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorWeight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorWeight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TowMotorCapacity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorCapacity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TowMotorID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1029,8 +1091,8 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, Tow" +
-                "MotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive FROM db" +
-                "o.towmotormain";
+                "MotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive, TowMot" +
+                "orWeight, TowMotorCapacity FROM dbo.towmotormain";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1091,13 +1153,15 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_TowMotorID, int Original_TowMotorYear, decimal Original_TowMotorHours, int Original_WarehouseID, System.DateTime Original_OilChangeDate, bool Original_TowMotorActive) {
+        public virtual int Delete(int Original_TowMotorID, int Original_TowMotorYear, decimal Original_TowMotorHours, int Original_WarehouseID, System.DateTime Original_OilChangeDate, bool Original_TowMotorActive, int Original_TowMotorWeight, int Original_TowMotorCapacity) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_TowMotorID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_TowMotorYear));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_TowMotorHours));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_WarehouseID));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_OilChangeDate));
             this.Adapter.DeleteCommand.Parameters[5].Value = ((bool)(Original_TowMotorActive));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_TowMotorWeight));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_TowMotorCapacity));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1118,7 +1182,7 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive) {
+        public virtual int Insert(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive, int TowMotorWeight, int TowMotorCapacity) {
             if ((TowMotorNumber == null)) {
                 throw new global::System.ArgumentNullException("TowMotorNumber");
             }
@@ -1148,6 +1212,8 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
             this.Adapter.InsertCommand.Parameters[6].Value = ((int)(WarehouseID));
             this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(OilChangeDate));
             this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(TowMotorActive));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(TowMotorWeight));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(TowMotorCapacity));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1178,12 +1244,16 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
                     int WarehouseID, 
                     System.DateTime OilChangeDate, 
                     bool TowMotorActive, 
+                    int TowMotorWeight, 
+                    int TowMotorCapacity, 
                     int Original_TowMotorID, 
                     int Original_TowMotorYear, 
                     decimal Original_TowMotorHours, 
                     int Original_WarehouseID, 
                     System.DateTime Original_OilChangeDate, 
                     bool Original_TowMotorActive, 
+                    int Original_TowMotorWeight, 
+                    int Original_TowMotorCapacity, 
                     int TowMotorID) {
             if ((TowMotorNumber == null)) {
                 throw new global::System.ArgumentNullException("TowMotorNumber");
@@ -1214,13 +1284,17 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(WarehouseID));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(OilChangeDate));
             this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(TowMotorActive));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_TowMotorID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_TowMotorYear));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_TowMotorHours));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_WarehouseID));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_OilChangeDate));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_TowMotorActive));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(TowMotorID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(TowMotorWeight));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(TowMotorCapacity));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TowMotorID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_TowMotorYear));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_TowMotorHours));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_WarehouseID));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_OilChangeDate));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(Original_TowMotorActive));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_TowMotorWeight));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_TowMotorCapacity));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(TowMotorID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1241,8 +1315,27 @@ SELECT TowMotorID, TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, To
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive, int Original_TowMotorID, int Original_TowMotorYear, decimal Original_TowMotorHours, int Original_WarehouseID, System.DateTime Original_OilChangeDate, bool Original_TowMotorActive) {
-            return this.Update(TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive, Original_TowMotorID, Original_TowMotorYear, Original_TowMotorHours, Original_WarehouseID, Original_OilChangeDate, Original_TowMotorActive, Original_TowMotorID);
+        public virtual int Update(
+                    string TowMotorNumber, 
+                    int TowMotorYear, 
+                    string TowMotorMake, 
+                    string TowMotorModel, 
+                    string TowMotorSerialNo, 
+                    decimal TowMotorHours, 
+                    int WarehouseID, 
+                    System.DateTime OilChangeDate, 
+                    bool TowMotorActive, 
+                    int TowMotorWeight, 
+                    int TowMotorCapacity, 
+                    int Original_TowMotorID, 
+                    int Original_TowMotorYear, 
+                    decimal Original_TowMotorHours, 
+                    int Original_WarehouseID, 
+                    System.DateTime Original_OilChangeDate, 
+                    bool Original_TowMotorActive, 
+                    int Original_TowMotorWeight, 
+                    int Original_TowMotorCapacity) {
+            return this.Update(TowMotorNumber, TowMotorYear, TowMotorMake, TowMotorModel, TowMotorSerialNo, TowMotorHours, WarehouseID, OilChangeDate, TowMotorActive, TowMotorWeight, TowMotorCapacity, Original_TowMotorID, Original_TowMotorYear, Original_TowMotorHours, Original_WarehouseID, Original_OilChangeDate, Original_TowMotorActive, Original_TowMotorWeight, Original_TowMotorCapacity, Original_TowMotorID);
         }
     }
     

@@ -301,6 +301,10 @@ namespace TowMotorDLL {
             
             private global::System.Data.DataColumn columnTowMotorActive;
             
+            private global::System.Data.DataColumn columnTowMotorWeight;
+            
+            private global::System.Data.DataColumn columnTowMotorCapacity;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FindActiveTowMotorMainDataTable() {
@@ -424,6 +428,22 @@ namespace TowMotorDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TowMotorWeightColumn {
+                get {
+                    return this.columnTowMotorWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TowMotorCapacityColumn {
+                get {
+                    return this.columnTowMotorCapacity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +479,7 @@ namespace TowMotorDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindActiveTowMotorMainRow AddFindActiveTowMotorMainRow(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, string Warehouse, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive) {
+            public FindActiveTowMotorMainRow AddFindActiveTowMotorMainRow(string TowMotorNumber, int TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, decimal TowMotorHours, string Warehouse, int WarehouseID, System.DateTime OilChangeDate, bool TowMotorActive, int TowMotorWeight, int TowMotorCapacity) {
                 FindActiveTowMotorMainRow rowFindActiveTowMotorMainRow = ((FindActiveTowMotorMainRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,7 +492,9 @@ namespace TowMotorDLL {
                         Warehouse,
                         WarehouseID,
                         OilChangeDate,
-                        TowMotorActive};
+                        TowMotorActive,
+                        TowMotorWeight,
+                        TowMotorCapacity};
                 rowFindActiveTowMotorMainRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFindActiveTowMotorMainRow);
                 return rowFindActiveTowMotorMainRow;
@@ -513,6 +535,8 @@ namespace TowMotorDLL {
                 this.columnWarehouseID = base.Columns["WarehouseID"];
                 this.columnOilChangeDate = base.Columns["OilChangeDate"];
                 this.columnTowMotorActive = base.Columns["TowMotorActive"];
+                this.columnTowMotorWeight = base.Columns["TowMotorWeight"];
+                this.columnTowMotorCapacity = base.Columns["TowMotorCapacity"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +564,10 @@ namespace TowMotorDLL {
                 base.Columns.Add(this.columnOilChangeDate);
                 this.columnTowMotorActive = new global::System.Data.DataColumn("TowMotorActive", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTowMotorActive);
+                this.columnTowMotorWeight = new global::System.Data.DataColumn("TowMotorWeight", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTowMotorWeight);
+                this.columnTowMotorCapacity = new global::System.Data.DataColumn("TowMotorCapacity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTowMotorCapacity);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTowMotorID}, true));
                 this.columnTowMotorID.AutoIncrement = true;
@@ -561,6 +589,8 @@ namespace TowMotorDLL {
                 this.columnWarehouseID.AllowDBNull = false;
                 this.columnOilChangeDate.AllowDBNull = false;
                 this.columnTowMotorActive.AllowDBNull = false;
+                this.columnTowMotorWeight.AllowDBNull = false;
+                this.columnTowMotorCapacity.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -821,6 +851,28 @@ namespace TowMotorDLL {
                     this[this.tableFindActiveTowMotorMain.TowMotorActiveColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TowMotorWeight {
+                get {
+                    return ((int)(this[this.tableFindActiveTowMotorMain.TowMotorWeightColumn]));
+                }
+                set {
+                    this[this.tableFindActiveTowMotorMain.TowMotorWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int TowMotorCapacity {
+                get {
+                    return ((int)(this[this.tableFindActiveTowMotorMain.TowMotorCapacityColumn]));
+                }
+                set {
+                    this[this.tableFindActiveTowMotorMain.TowMotorCapacityColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -993,6 +1045,8 @@ namespace TowMotorDLL.FindActiveTowMotorMainDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("WarehouseID", "WarehouseID");
             tableMapping.ColumnMappings.Add("OilChangeDate", "OilChangeDate");
             tableMapping.ColumnMappings.Add("TowMotorActive", "TowMotorActive");
+            tableMapping.ColumnMappings.Add("TowMotorWeight", "TowMotorWeight");
+            tableMapping.ColumnMappings.Add("TowMotorCapacity", "TowMotorCapacity");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -283,12 +283,14 @@ namespace TowMotorDLL.InsertTowMotorMainEntryTableAdapters {
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WarehouseID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OilChangeDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorWeight", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TowMotorCapacity", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InsertTowMotorMain(string TowMotorNumber, global::System.Nullable<int> TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, global::System.Nullable<decimal> TowMotorHours, global::System.Nullable<int> WarehouseID, global::System.Nullable<global::System.DateTime> OilChangeDate, global::System.Nullable<bool> TowMotorActive) {
+        public virtual int InsertTowMotorMain(string TowMotorNumber, global::System.Nullable<int> TowMotorYear, string TowMotorMake, string TowMotorModel, string TowMotorSerialNo, global::System.Nullable<decimal> TowMotorHours, global::System.Nullable<int> WarehouseID, global::System.Nullable<global::System.DateTime> OilChangeDate, global::System.Nullable<bool> TowMotorActive, global::System.Nullable<int> TowMotorWeight, global::System.Nullable<int> TowMotorCapacity) {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
             if ((TowMotorNumber == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -343,6 +345,18 @@ namespace TowMotorDLL.InsertTowMotorMainEntryTableAdapters {
             }
             else {
                 command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((TowMotorWeight.HasValue == true)) {
+                command.Parameters[10].Value = ((int)(TowMotorWeight.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((TowMotorCapacity.HasValue == true)) {
+                command.Parameters[11].Value = ((int)(TowMotorCapacity.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
